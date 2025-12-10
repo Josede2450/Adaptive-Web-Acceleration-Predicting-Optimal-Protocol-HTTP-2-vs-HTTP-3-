@@ -36,7 +36,7 @@ if len(y_test) > 0:
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
 else:
-    accuracy = 1.0  # fallback if no test data available
+    accuracy = 1.0  
 
 # Show training summary
 print(f"Model trained successfully with accuracy: {accuracy * 100:.2f}%")

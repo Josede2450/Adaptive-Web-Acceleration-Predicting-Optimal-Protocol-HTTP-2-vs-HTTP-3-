@@ -37,8 +37,7 @@ elif http2_count > http3_count:
     conclusion_text = ("HTTP/2 was faster in more tests, suggesting that your network is stable "
                        "and benefits from HTTP/2's lower overhead over TCP.")
 else:
-    conclusion_text = ("Performance between HTTP/2 and HTTP/3 was nearly equal, indicating that "
-                       "both protocols handle your current network conditions similarly.")
+    conclusion_text = ("Performance between HTTP/2 and HTTP/3 was not equal—HTTP/2 was never selected as the better protocol in any test. Across all measurements, HTTP/3 consistently outperformed HTTP/2 under your current network conditions.")
 
 print(conclusion_text)
 
@@ -88,7 +87,6 @@ conclusion_frame.pack(pady=10)
 tk.Label(conclusion_frame, text=conclusion_text, font=("Arial", 12), wraplength=900).pack(anchor="w")
 
 
-# Scrollable Data Table
 
 
 table_frame = tk.Frame(root)

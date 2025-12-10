@@ -39,7 +39,7 @@ def get_latency(host="8.8.8.8"):
 
 def test_protocol(protocol_flag):
     try:
-        # Use the full path to the working curl binary (x86_64 version with HTTP/3 support)
+        # Use the full path to the working curl binary 
         cmd = [
             r"C:\curl\curl-8.17.0_4-win64-mingw\bin\curl.exe",
             "-s",
@@ -56,7 +56,7 @@ def test_protocol(protocol_flag):
         # Debug: show raw output
         print(f"[DEBUG] Raw curl output ({protocol_flag}): '{output}'")
 
-        # Try to extract the first floating-point number from output
+        # Extract the first floating-point number from output
         match = re.search(r"([0-9]*\.[0-9]+)", output)
         if match:
             return float(match.group(1))
@@ -93,7 +93,7 @@ with open(OUTPUT_FILE, "w", newline="") as csvfile:
             writer.writerow({"latency": latency, "protocol": "HTTP/3", "time": t_http3})
             print(f"Latency={latency} ms | HTTP/2={t_http2}s | HTTP/3={t_http3}s")
         else:
-            print("Skipped iteration (missing data)")
+            print("Skipped iteration")
 
         time.sleep(2)
 
